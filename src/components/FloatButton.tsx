@@ -70,7 +70,7 @@ export function FloatButton() {
       {/* Overlay com desfoque quando ativo */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 transition-all duration-300"
+          className="float-button-overlay fixed inset-0 bg-black/20 backdrop-blur-sm z-[40] transition-all duration-300"
           onClick={() => {
             setIsOpen(false);
             setShowToolsMenu(false);
@@ -78,7 +78,7 @@ export function FloatButton() {
         />
       )}
 
-      <div className="fixed bottom-4 right-4 z-50">
+      <div className="fixed bottom-4 right-4 z-[76]">
         {/* Menu Items */}
         <div
           className={`absolute bottom-16 right-0 space-y-2 transition-all duration-300 ${
@@ -105,7 +105,7 @@ export function FloatButton() {
         {/* Main Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-110 cursor-pointer ${
+          className={`float-button-main p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-110 cursor-pointer ${
             isOpen ? "bg-[#103239]" : "bg-[#103239] dark:bg-[#c8d300]"
           }`}
         >
@@ -119,7 +119,7 @@ export function FloatButton() {
         {/* Tools Button */}
         <button
           onClick={handleToolsToggle}
-          className={`bg-[#103239] dark:bg-[#c8d300] text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-110 cursor-pointer absolute bottom-0 right-16 ${
+          className={`float-button-tools bg-[#103239] dark:bg-[#c8d300] text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-110 cursor-pointer absolute bottom-0 right-16 ${
             isOpen
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"

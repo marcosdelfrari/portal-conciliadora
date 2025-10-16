@@ -5,11 +5,10 @@ import { useSearchParams } from "next/navigation";
 import { Text } from "@/ui/forms/Text";
 import { Select } from "@/ui/forms/Select";
 import { NumericInput } from "@/ui/forms/NumericInput";
-import ThemeToggle from "../ThemeToggle";
-import Logo from "@/components/Logo";
 import { CadastroService } from "@/services/cadastroService";
 import { CadastroRequest } from "@/types/api";
 import Sucesso from "@/components/Sucesso";
+import Header from "@/components/Header";
 
 interface FormData {
   nome: string;
@@ -168,10 +167,7 @@ function CadastroForm() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#0a0a0a] flex flex-col p-4">
-      <header className="w-full flex items-center justify-between pb-8 p-4">
-        <Logo width={150} height={150} />
-        <ThemeToggle />
-      </header>
+      <Header />
       <div className="w-full px-4">
         {/* Formulário */}
         <form onSubmit={handleSubmit} className="space-y-4">

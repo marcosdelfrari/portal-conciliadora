@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import Logo from "./Logo";
-import ThemeToggle from "../app/ThemeToggle";
+import Header from "./Header";
 
 interface SucessoProps {
   // Configurações básicas
@@ -52,10 +51,7 @@ export default function Sucesso({
 
   return (
     <div className="bg-white dark:bg-[#0a0a0a] flex flex-col p-4 min-h-screen">
-      <header className="w-full flex items-center justify-between pb-8 p-4">
-        <Logo width={150} height={150} />
-        <ThemeToggle />
-      </header>
+      <Header />
 
       <div className="w-full max-w-md mx-auto px-4">
         {/* Ícone de sucesso */}

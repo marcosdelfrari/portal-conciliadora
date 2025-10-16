@@ -1,9 +1,13 @@
-import ThemeToggle from "../ThemeToggle";
-import Logo from "@/components/Logo";
+"use client";
+
 import { Lista } from "@/components/Lista";
 import { FloatButton } from "@/components/FloatButton";
+import Header from "@/components/Header";
+import { TutorialTour, TutorialTourRef } from "@/components/TutorialTour";
+import { useRef } from "react";
 
 export default function DashboardPage() {
+  const tutorialRef = useRef<TutorialTourRef>(null);
   // Dados mock estruturados por grupos
   const dadosMock = [
     {
@@ -53,13 +57,15 @@ export default function DashboardPage() {
     });
   }
 
+  const handleShowTutorial = () => {
+    tutorialRef.current?.restart();
+  };
+
   return (
     <div className="min-h-screen p-4">
-      <header className="w-full flex items-center justify-between pb-8 p-4">
-        <Logo width={150} height={150} />
-        <ThemeToggle />
-      </header>
+      <Header onShowTutorial={handleShowTutorial} />
       <FloatButton />
+      <TutorialTour ref={tutorialRef} />
       <div className="max-w-7xl mx-auto p-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {listas.map((lista, index) => (

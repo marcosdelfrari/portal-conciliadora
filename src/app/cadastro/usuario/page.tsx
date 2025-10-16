@@ -1,13 +1,12 @@
 "use client";
 
-import Logo from "@/components/Logo";
 import React, { useState } from "react";
-import ThemeToggle from "@/app/ThemeToggle";
 import { FloatButton } from "@/components/FloatButton";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { Select } from "@/ui/forms/Select";
 import { Text } from "@/ui/forms/Text";
 import Sucesso from "@/components/Sucesso";
+import Header from "@/components/Header";
 
 interface FormData {
   nome: string;
@@ -121,10 +120,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#0a0a0a] flex flex-col p-4">
-      <header className="w-full flex items-center justify-between pb-8 p-4">
-        <Logo width={150} height={150} />
-        <ThemeToggle />
-      </header>
+      <Header />
 
       <FloatButton />
 

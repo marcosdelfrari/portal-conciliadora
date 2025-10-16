@@ -10,25 +10,13 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen p-4">
       <header className="w-full flex items-center justify-between pb-8 p-4">
-        <Logo width={150} height={150} />
+       <Link href="/dashboard"><Logo width={150} height={150} /></Link>
         <ThemeToggle />
       </header>
 
-      <FloatButton />
-      <div className=" px-4">
-        {" "}
-        <Breadcrumb
-          items={[
-            { label: "Dashboard", href: "/dashboard" },
-            { label: "Ajustes" },
-          ]}
-        />
-      </div>
+      <FloatButton /> 
       <div className="max-w-7xl mx-auto p-4">
         <div>
-          <div className="border-b border-gray-200 p-4 mb-4 dark:border-[#2a2a2a]">
-            <h2>Editar Dados</h2>
-          </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
             {" "}
             <Blocos
