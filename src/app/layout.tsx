@@ -41,8 +41,8 @@ export default function RootLayout({
           }}
         />
         <ThemeProvider>
-          <div>
-            <main>{children}</main>
+          <div >
+            <main className="max-w-7xl mx-auto">{children}</main>
           </div>
         </ThemeProvider>
       </body>

@@ -17,7 +17,7 @@ export default function DashboardPage() {
       <FloatButton /> 
       <div className="max-w-7xl mx-auto p-4">
         <div>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
             {" "}
             <Blocos
               titulo="Empresa"
@@ -30,11 +30,11 @@ export default function DashboardPage() {
               href="/ajustes/editar/usuario"
               icone={User}
             />{" "}
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800/50 dark:to-gray-700/50 border border-gray-300 dark:border-gray-600 rounded-xl hover:shadow-lg hover:shadow-gray-200/30 dark:hover:shadow-gray-800/20 transition-all duration-200 hover:scale-[1.02]">
+            <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800/50 dark:to-gray-700/50 border border-gray-300 dark:border-gray-600 rounded-xl  transition-all duration-200 ">
               <Link href="/ajustes/desativar">
                 <div className="flex flex-col items-center justify-center p-6 text-center">
                   <div className="relative">
-                    <Trash2 className="w-8 h-8 text-gray-600 dark:text-gray-400 mb-3" />
+                    <Trash2 className="w-8 h-8 md:w-6 md:h-6 text-gray-600 dark:text-gray-400 mb-3" />
                   </div>
                   <h2 className="text-gray-700 dark:text-gray-300 font-medium text-base">
                     Desativar

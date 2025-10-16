@@ -113,7 +113,7 @@ export function FloatButton() {
               setIsOpen(true);
             }
           }}
-          className={`float-button-main p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-110 cursor-pointer ${
+          className={`float-button-main p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform  cursor-pointer ${
             isOpen ? "bg-[#103239]" : "bg-[#103239] dark:bg-[#c8d300]"
           }`}
         >
@@ -127,7 +127,7 @@ export function FloatButton() {
         {/* Tools Button */}
         <button
           onClick={handleToolsToggle}
-          className={`float-button-tools bg-[#103239] dark:bg-[#c8d300] text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-110 cursor-pointer absolute bottom-0 right-16 ${
+          className={`float-button-tools bg-[#103239] dark:bg-[#c8d300] text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform cursor-pointer absolute bottom-0 right-16 ${
             isOpen
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"

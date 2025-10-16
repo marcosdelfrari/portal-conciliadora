@@ -152,7 +152,7 @@ export const Select: React.FC<SelectProps> = ({
 
         {isOpen && (
           <div
-            className="absolute z-10 w-full mt-1 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] rounded-xl shadow-lg max-h-60 overflow-auto"
+            className="absolute z-10 w-full mt-2 bg-white dark:bg-[#1a1a1a] border border-gray-200 dark:border-[#2a2a2a] rounded-xl dark:shadow-lg max-h-60 overflow-auto"
             role="listbox"
           >
             {options.map((option, index) => (

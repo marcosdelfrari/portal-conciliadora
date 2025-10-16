@@ -226,9 +226,7 @@ export const TutorialTour = forwardRef<TutorialTourRef>((props, ref) => {
           >
             <div className="tutorial-tooltip relative bg-white dark:bg-[#103239] rounded-lg p-4 shadow-xl mx-4 w-[220px] border border-white dark:border-white">
               {/* Seta do balão - sempre no canto inferior direito */}
-              <div className="block md:hidden absolute -bottom-2 right-6 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-white dark:border-t-white">
-                <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-t-[7px] border-t-white"></div>
-              </div>
+            
 
               <div className="flex items-start justify-between mb-2">
                 <div className="flex-1">
