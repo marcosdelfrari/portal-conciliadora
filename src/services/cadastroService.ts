@@ -1,4 +1,4 @@
-import { CadastroRequest, CadastroResponse, ApiError } from "@/types/api";
+import { CadastroRequest, CadastroResponse } from "@/types/api";
 import { getApiUrl, API_CONFIG } from "@/config/api";
 
 /**

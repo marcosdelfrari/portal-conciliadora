@@ -5,16 +5,14 @@ import React, { useState } from "react";
 import ThemeToggle from "@/app/ThemeToggle";
 import { FloatButton } from "@/components/FloatButton";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { Select } from "@/ui/forms/Select";
 import { Text } from "@/ui/forms/Text";
-import { NumericInput } from "@/ui/forms/NumericInput";
 import Sucesso from "@/components/Sucesso";
 
 interface FormData {
   nome: string;
 }
 
-export default function page() {
+export default function Page() {
   const [formData, setFormData] = useState<FormData>({
     nome: "",
   });

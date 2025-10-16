@@ -26,7 +26,7 @@ export const getApiUrl = (): string => {
   switch (env) {
     case "production":
       return API_CONFIG.ENDPOINTS.PRODUCTION;
-    case "staging":
+    case "test":
       return API_CONFIG.ENDPOINTS.STAGING;
     default:
       return API_CONFIG.ENDPOINTS.DEVELOPMENT;

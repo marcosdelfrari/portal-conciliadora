@@ -14,7 +14,7 @@ interface FormData {
   novoNome: string;
 }
 
-export default function page() {
+export default function Page() {
   const [formData, setFormData] = useState<FormData>({
     grupoId: "",
     novoNome: "",

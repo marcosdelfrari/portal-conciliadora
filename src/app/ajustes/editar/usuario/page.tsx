@@ -15,7 +15,7 @@ interface FormData {
   nivelAcesso: string;
 }
 
-export default function page() {
+export default function Page() {
   const [formData, setFormData] = useState<FormData>({
     usuarioId: "",
     novoNome: "",

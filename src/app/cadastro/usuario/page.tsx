@@ -15,7 +15,7 @@ interface FormData {
   tipo: string;
 }
 
-export default function page() {
+export default function Page() {
   const [formData, setFormData] = useState<FormData>({
     nome: "",
     email: "",

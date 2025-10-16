@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Mukta } from "next/font/google";
 import "./globals.css";
-import ThemeToggle from "./ThemeToggle";
-import Logo from "../components/Logo";
 import { ThemeProvider } from "./ThemeContext";
 
 const mukta = Mukta({
@@ -43,9 +41,8 @@ export default function RootLayout({
           }}
         />
         <ThemeProvider>
-          <div >
-       
-            <main >{children}</main>
+          <div>
+            <main>{children}</main>
           </div>
         </ThemeProvider>
       </body>

@@ -1,10 +1,9 @@
 import ThemeToggle from "../ThemeToggle";
 import Logo from "@/components/Logo";
-import { Lista } from "@/components/Lista";
 import { FloatButton } from "@/components/FloatButton";
 import Blocos from "@/components/Blocos";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { Building2, Users, User, Trash, Trash2 } from "lucide-react";
+import { Building2, Users, User, Trash2 } from "lucide-react";
 import Link from "next/link";
 
 export default function DashboardPage() {
@@ -48,7 +47,7 @@ export default function DashboardPage() {
                 <div className="flex flex-col items-center justify-center p-6 text-center">
                   <div className="relative">
                     <Trash2 className="w-8 h-8 text-gray-600 dark:text-gray-400 mb-3" />
-                   </div>
+                  </div>
                   <h2 className="text-gray-700 dark:text-gray-300 font-medium text-base">
                     Desativar
                   </h2>

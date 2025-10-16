@@ -16,7 +16,7 @@ interface FormData {
   cnpj: string;
 }
 
-export default function page() {
+export default function Page() {
   const [formData, setFormData] = useState<FormData>({
     grupo: "",
     nome: "",

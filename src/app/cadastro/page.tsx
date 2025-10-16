@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Text } from "@/ui/forms/Text";
 import { Select } from "@/ui/forms/Select";
@@ -25,7 +25,7 @@ const planosOptions = [
   { value: "premium", label: "Premium" },
 ];
 
-export default function CadastroPage() {
+function CadastroForm() {
   const searchParams = useSearchParams();
 
   const [formData, setFormData] = useState<FormData>({
@@ -153,7 +153,6 @@ export default function CadastroPage() {
     }
   };
 
-  
   // Se o cadastro foi realizado com sucesso, mostrar o componente Sucesso
   if (showSuccess && dadosCadastro) {
     return (
@@ -163,7 +162,6 @@ export default function CadastroPage() {
         descricao=""
         textoBotaoPrincipal="Iniciar Jornada"
         linkBotaoPrincipal="/dashboard"
-       
       />
     );
   }
@@ -259,5 +257,13 @@ export default function CadastroPage() {
         </form>{" "}
       </div>
     </div>
+  );
+}
+
+export default function CadastroPage() {
+  return (
+    <Suspense fallback={<div>Carregando...</div>}>
+      <CadastroForm />
+    </Suspense>
   );
 }

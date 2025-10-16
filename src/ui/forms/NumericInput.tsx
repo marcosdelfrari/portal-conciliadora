@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 
 type MaskType = "cnpj" | "cpf" | "phone" | "cep" | "currency" | "none";
 
