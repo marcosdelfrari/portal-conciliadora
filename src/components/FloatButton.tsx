@@ -10,6 +10,7 @@ import {
   CreditCard,
   Edit,
   HelpCircle,
+  Menu,
 } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -93,7 +94,7 @@ export function FloatButton() {
               <button
                 key={index}
                 onClick={() => handleItemClick(item.route)}
-                className="flex shadow-lg font-light tracking-wide items-center gap-3 bg-white dark:bg-[#103239] text-gray-800 dark:text-[#c8d300] px-4 py-3 rounded-full hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 transform min-w-[240px] cursor-pointer"
+                className="flex shadow-lg font-light tracking-wide items-center gap-3 bg-white dark:bg-[#103239] text-gray-800 dark:text-[#c8d300] px-4 py-3 rounded-full hover:bg-[#c8d300]  dark:hover:bg-[#c8d300] dark:hover:text-[#103239] transition-all duration-200 transform min-w-[240px] cursor-pointer"
               >
                 <IconComponent className="w-5 h-5" />
                 <span>{item.label}</span>
@@ -104,7 +105,14 @@ export function FloatButton() {
 
         {/* Main Button */}
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => {
+            if (isOpen) {
+              setIsOpen(false);
+              setShowToolsMenu(false);
+            } else {
+              setIsOpen(true);
+            }
+          }}
           className={`float-button-main p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-110 cursor-pointer ${
             isOpen ? "bg-[#103239]" : "bg-[#103239] dark:bg-[#c8d300]"
           }`}
@@ -112,7 +120,7 @@ export function FloatButton() {
           {isOpen ? (
             <ChevronUp className="w-6 h-6 text-[#c8d300]" />
           ) : (
-            <Plus className="w-6 h-6 text-white dark:text-[#103239]" />
+            <Menu className="w-6 h-6 text-white dark:text-[#103239]" />
           )}
         </button>
 

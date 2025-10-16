@@ -162,31 +162,40 @@ export const TutorialTour = forwardRef<TutorialTourRef>((props, ref) => {
   const getTooltipPosition = () => {
     const step = steps[currentStep];
     const target = document.querySelector(step.target);
-    if (!target) return {};
+    if (!target) return { position: {}, arrowPosition: "bottom-right" };
 
     const rect = target.getBoundingClientRect();
     const isMobile = window.innerWidth < 768;
 
     if (isMobile) {
       return {
-        top: "45%",
-        left: "50%",
-        transform: "translateX(-50%)",
+        position: {
+          top: "75%",
+          left: "50%",
+          transform: "translateX(-50%)",
+        },
+        arrowPosition: "bottom-right",
       };
     } else {
       const spaceAbove = rect.top;
 
       if (spaceAbove > 150) {
         return {
-          bottom: `${window.innerHeight - rect.top + 10}px`,
-          left: "50%",
-          transform: "translateX(-50%)",
+          position: {
+            bottom: `${window.innerHeight - rect.top + 10}px`,
+            right: "0%",
+            transform: "translateX(-50%)",
+          },
+          arrowPosition: "bottom-right",
         };
       } else {
         return {
-          top: `${rect.top + rect.height / 2}px`,
-          right: `${window.innerWidth - rect.left + 20}px`,
-          transform: "translateY(-50%)",
+          position: {
+            top: `${rect.top + rect.height / 2}px`,
+            right: `${window.innerWidth - rect.left + 20}px`,
+            transform: "translateY(-50%)",
+          },
+          arrowPosition: "bottom-right",
         };
       }
     }
@@ -196,34 +205,7 @@ export const TutorialTour = forwardRef<TutorialTourRef>((props, ref) => {
 
   return (
     <>
-      {/* Modal inicial */}
-      {showTutorial && (
-        <div className="fixed inset-0 bg-black/60 z-[100] flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-[#103239] rounded-lg p-6 max-w-sm w-full shadow-xl">
-            <h2 className="text-xl font-semibold text-gray-800 dark:text-[#c8d300] mb-3">
-              Tutorial
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-6">
-              Quer aprender a usar o menu flutuante?
-            </p>
-            <div className="flex gap-3">
-              <button
-                onClick={startTutorial}
-                className="flex-1 bg-[#103239] dark:bg-[#c8d300] text-white dark:text-[#103239] px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90"
-              >
-                Iniciar
-              </button>
-              <button
-                onClick={skipTutorial}
-                className="flex-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-300 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600"
-              >
-                Agora não
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
+    
       {/* Tutorial ativo */}
       {isActive && (
         <>
@@ -240,9 +222,14 @@ export const TutorialTour = forwardRef<TutorialTourRef>((props, ref) => {
           {/* Tooltip */}
           <div
             className="fixed z-[200] transition-all duration-300"
-            style={getTooltipPosition()}
+            style={getTooltipPosition().position}
           >
-            <div className="tutorial-tooltip bg-white dark:bg-[#103239] rounded-lg p-4 shadow-xl mx-4 w-[220px] border border-[#c8d300]">
+            <div className="tutorial-tooltip relative bg-white dark:bg-[#103239] rounded-lg p-4 shadow-xl mx-4 w-[220px] border border-white dark:border-white">
+              {/* Seta do balão - sempre no canto inferior direito */}
+              <div className="block md:hidden absolute -bottom-2 right-6 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-white dark:border-t-white">
+                <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[7px] border-l-transparent border-r-[7px] border-r-transparent border-t-[7px] border-t-white"></div>
+              </div>
+
               <div className="flex items-start justify-between mb-2">
                 <div className="flex-1">
                   <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">
