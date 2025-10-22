@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { FloatButton } from "@/components/FloatButton";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { Select } from "@/ui/forms/Select";
+import { Select } from "@/ui/forms/SelectCustom";
 import { Text } from "@/ui/forms/Text";
 import Sucesso from "@/components/Sucesso";
 import Header from "@/components/Header";

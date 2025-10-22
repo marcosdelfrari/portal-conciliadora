@@ -43,3 +43,9 @@ body {
 .dark [contenteditable]:empty:before {
   color: #6b7280;
 }
+
+/* Backdrop blur para o popup */
+.backdrop-blur-custom {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}

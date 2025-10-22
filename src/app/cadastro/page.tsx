@@ -3,7 +3,7 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Text } from "@/ui/forms/Text";
-import { Select } from "@/ui/forms/Select";
+import { Select } from "@/ui/forms/SelectCustom";
 import { NumericInput } from "@/ui/forms/NumericInput";
 import { CadastroService } from "@/services/cadastroService";
 import { CadastroRequest } from "@/types/api";

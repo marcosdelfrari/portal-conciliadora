@@ -2,6 +2,7 @@
 
 import React from "react";
 import Header from "./Header";
+import { Check, CheckCircleIcon } from "lucide-react";
 
 interface SucessoProps {
   // Configurações básicas
@@ -33,21 +34,7 @@ export default function Sucesso({
   linkBotaoSecundario,
   onClickBotaoSecundario,
 }: SucessoProps) {
-  const iconePadrao = (
-    <svg
-      className="w-10 h-10"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={2}
-        d="M5 13l4 4L19 7"
-      />
-    </svg>
-  );
+  const iconePadrao = <Check className="w-20 h-20" />;
 
   return (
     <div className="bg-white dark:bg-[#0a0a0a] flex flex-col p-4 min-h-screen">
@@ -75,7 +62,7 @@ export default function Sucesso({
             {textoBotaoPrincipal && linkBotaoPrincipal && (
               <button
                 onClick={() => (window.location.href = linkBotaoPrincipal)}
-                className="border border-[#103239] text-[#103239] dark:text-[#c8d300] dark:border-[#c8d300] px-4 py-2 rounded-lg transition-colors duration-200"
+                className="border border-[#1a1a1a] text-[#1a1a1a] dark:text-[#c8d300] dark:border-[#c8d300] px-4 py-2 rounded-lg transition-colors duration-200"
               >
                 {textoBotaoPrincipal}
               </button>
@@ -92,7 +79,7 @@ export default function Sucesso({
                       window.location.href = linkBotaoSecundario;
                     }
                   }}
-                  className="bg-[#103239] hover:bg-[#c8d300] dark:bg-[#c8d300] dark:hover:bg-[#c8d300] text-white dark:text-[#103239] px-4 py-2 rounded-lg transition-colors duration-200"
+                  className="bg-[#1a1a1a] hover:bg-[#c8d300] dark:bg-[#c8d300] dark:hover:bg-[#c8d300] text-white dark:text-[#1a1a1a] px-4 py-2 rounded-lg transition-colors duration-200"
                 >
                   {textoBotaoSecundario}
                 </button>

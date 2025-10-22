@@ -205,7 +205,6 @@ export const TutorialTour = forwardRef<TutorialTourRef>((props, ref) => {
 
   return (
     <>
-    
       {/* Tutorial ativo */}
       {isActive && (
         <>
@@ -224,9 +223,8 @@ export const TutorialTour = forwardRef<TutorialTourRef>((props, ref) => {
             className="fixed z-[200] transition-all duration-300"
             style={getTooltipPosition().position}
           >
-            <div className="tutorial-tooltip relative bg-white dark:bg-[#103239] rounded-lg p-4 shadow-xl mx-4 w-[220px] border border-white dark:border-white">
+            <div className="tutorial-tooltip relative bg-white dark:bg-[#1a1a1a] rounded-lg p-4 shadow-xl mx-4 w-[220px] border border-white dark:border-white">
               {/* Seta do balão - sempre no canto inferior direito */}
-            
 
               <div className="flex items-start justify-between mb-2">
                 <div className="flex-1">

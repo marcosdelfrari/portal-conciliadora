@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { FloatButton } from "@/components/FloatButton";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { Select } from "@/ui/forms/Select";
+import { Select } from "@/ui/forms/SelectCustom";
 import Sucesso from "@/components/Sucesso";
 import Header from "@/components/Header";
 
@@ -115,9 +115,9 @@ export default function Page() {
   if (showSuccess && dadosGrupo) {
     return (
       <Sucesso
-        titulo="tipo atualizada!"
-        subtitulo="Os dados foram salvos com sucesso"
-        descricao={`A tipo selecionada foi desativada com sucesso.`}
+        titulo="Concluído!"
+        subtitulo="Sua solicitação foi enviada com sucesso."
+        descricao={``}
         textoBotaoPrincipal="Voltar ao Dashboard"
         linkBotaoPrincipal="/dashboard"
         textoBotaoSecundario="Editar outra tipo"

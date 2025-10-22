@@ -42,7 +42,7 @@ export function FloatButton() {
     {
       label: "Dados de pagamento",
       icon: CreditCard,
-      route: "/pagamento",
+      route: "/pagamentos",
     },
     {
       label: "Editar ou Desativar",
@@ -94,7 +94,7 @@ export function FloatButton() {
               <button
                 key={index}
                 onClick={() => handleItemClick(item.route)}
-                className="flex shadow-lg font-light tracking-wide items-center gap-3 bg-white dark:bg-[#103239] text-gray-800 dark:text-[#c8d300] px-4 py-3 rounded-full hover:bg-[#c8d300]  dark:hover:bg-[#c8d300] dark:hover:text-[#103239] transition-all duration-200 transform min-w-[240px] cursor-pointer"
+                className="flex shadow-lg font-light tracking-wide items-center gap-3 bg-white dark:bg-[#1a1a1a] text-gray-800 dark:text-[#c8d300] px-4 py-3 rounded-full hover:bg-[#c8d300]  dark:hover:bg-[#c8d300] dark:hover:text-[#1a1a1a] transition-all duration-200 transform min-w-[240px] cursor-pointer"
               >
                 <IconComponent className="w-5 h-5" />
                 <span>{item.label}</span>
@@ -114,29 +114,29 @@ export function FloatButton() {
             }
           }}
           className={`float-button-main p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform  cursor-pointer ${
-            isOpen ? "bg-[#103239]" : "bg-[#103239] dark:bg-[#c8d300]"
+            isOpen ? "bg-[#1a1a1a]" : "bg-[#1a1a1a] dark:bg-[#c8d300]"
           }`}
         >
           {isOpen ? (
             <ChevronUp className="w-6 h-6 text-[#c8d300]" />
           ) : (
-            <Menu className="w-6 h-6 text-white dark:text-[#103239]" />
+            <Menu className="w-6 h-6 text-white dark:text-[#1a1a1a]" />
           )}
         </button>
 
         {/* Tools Button */}
         <button
           onClick={handleToolsToggle}
-          className={`float-button-tools bg-[#103239] dark:bg-[#c8d300] text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform cursor-pointer absolute bottom-0 right-16 ${
+          className={`float-button-tools bg-[#1a1a1a] dark:bg-[#c8d300] text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform cursor-pointer absolute bottom-0 right-16 ${
             isOpen
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"
           }`}
         >
           {showToolsMenu ? (
-            <Plus className="w-6 h-6 text-white dark:text-[#103239]" />
+            <Plus className="w-6 h-6 text-white dark:text-[#1a1a1a]" />
           ) : (
-            <Settings className="w-6 h-6 text-white dark:text-[#103239]" />
+            <Settings className="w-6 h-6 text-white dark:text-[#1a1a1a]" />
           )}
         </button>
       </div>

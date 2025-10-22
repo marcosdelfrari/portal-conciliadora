@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { FloatButton } from "@/components/FloatButton";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { Select } from "@/ui/forms/Select";
+import { Select } from "@/ui/forms/SelectCustom";
 import { Text } from "@/ui/forms/Text";
 import { NumericInput } from "@/ui/forms/NumericInput";
 import Sucesso from "@/components/Sucesso";
@@ -13,6 +13,8 @@ interface FormData {
   grupo: string;
   nome: string;
   cnpj: string;
+  plano: string;
+  tipoFaturamento: string;
 }
 
 export default function Page() {
@@ -20,6 +22,8 @@ export default function Page() {
     grupo: "",
     nome: "",
     cnpj: "",
+    plano: "",
+    tipoFaturamento: "",
   });
 
   const [showSuccess, setShowSuccess] = useState(false);
@@ -38,11 +42,30 @@ export default function Page() {
     { value: "grupo10", label: "Grupo 10" },
   ];
 
+  const planoOptions = [
+    { value: "basico", label: "Básico" },
+    { value: "completo", label: "Completo" },
+    { value: "premium", label: "Premium" },
+  ];
+
+  const tipoFaturamentoOptions = [
+    { value: "pix", label: "PIX" },
+    { value: "boleto", label: "Boleto" },
+    { value: "cartao_credito", label: "Cartão de Crédito" },
+    { value: "cartao_debito", label: "Cartão de Débito" },
+  ];
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     // Validação básica
-    if (!formData.grupo || !formData.nome || !formData.cnpj) {
+    if (
+      !formData.grupo ||
+      !formData.nome ||
+      !formData.cnpj ||
+      !formData.plano ||
+      !formData.tipoFaturamento
+    ) {
       alert("Por favor, preencha todos os campos obrigatórios.");
       return;
     }
@@ -59,6 +82,8 @@ export default function Page() {
       grupo: "",
       nome: "",
       cnpj: "",
+      plano: "",
+      tipoFaturamento: "",
     });
   };
 
@@ -71,7 +96,13 @@ export default function Page() {
 
   // Verificar se um campo está visível baseado no preenchimento do anterior
   const isFieldVisible = (fieldName: keyof FormData) => {
-    const fieldOrder: (keyof FormData)[] = ["grupo", "nome", "cnpj"];
+    const fieldOrder: (keyof FormData)[] = [
+      "grupo",
+      "nome",
+      "cnpj",
+      "plano",
+      "tipoFaturamento",
+    ];
     const currentIndex = fieldOrder.indexOf(fieldName);
 
     // O primeiro campo sempre está visível
@@ -88,7 +119,9 @@ export default function Page() {
     return (
       formData.grupo.trim() !== "" &&
       formData.nome.trim() !== "" &&
-      formData.cnpj.trim() !== ""
+      formData.cnpj.trim() !== "" &&
+      formData.plano.trim() !== "" &&
+      formData.tipoFaturamento.trim() !== ""
     );
   };
 
@@ -100,6 +133,8 @@ export default function Page() {
       grupo: "",
       nome: "",
       cnpj: "",
+      plano: "",
+      tipoFaturamento: "",
     });
   };
 
@@ -109,7 +144,7 @@ export default function Page() {
       <Sucesso
         titulo="Empresa Cadastrada!"
         subtitulo="A empresa foi cadastrada com sucesso"
-        descricao={`A empresa ${dadosEmpresa.nome} foi cadastrada no grupo ${dadosEmpresa.grupo} com CNPJ ${dadosEmpresa.cnpj}.`}
+        descricao={`A empresa ${dadosEmpresa.nome} foi cadastrada no grupo ${dadosEmpresa.grupo} com CNPJ ${dadosEmpresa.cnpj}, plano ${dadosEmpresa.plano} e tipo de faturamento ${dadosEmpresa.tipoFaturamento}.`}
         textoBotaoPrincipal="Voltar ao Dashboard"
         linkBotaoPrincipal="/dashboard"
         textoBotaoSecundario="Cadastrar nova empresa"
@@ -129,7 +164,7 @@ export default function Page() {
           items={[
             { label: "Dashboard", href: "/dashboard" },
             { label: "Cadastro de Empresa" },
-          ]}
+          ]}  
         />
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -161,6 +196,28 @@ export default function Page() {
               value={formData.cnpj}
               onChange={(value) => handleInputChange("cnpj", value)}
               maskType="cnpj"
+              required
+            />
+          )}
+
+          {isFieldVisible("plano") && (
+            <Select
+              label="Plano"
+              options={planoOptions}
+              value={formData.plano}
+              onChange={(value) => handleInputChange("plano", value)}
+              placeholder="Selecione o plano"
+              required
+            />
+          )}
+
+          {isFieldVisible("tipoFaturamento") && (
+            <Select
+              label="Tipo de Faturamento"
+              options={tipoFaturamentoOptions}
+              value={formData.tipoFaturamento}
+              onChange={(value) => handleInputChange("tipoFaturamento", value)}
+              placeholder="Selecione o tipo de faturamento"
               required
             />
           )}

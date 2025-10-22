@@ -96,13 +96,13 @@ export const Text: React.FC<TextInputProps> = ({
           w-full px-4 py-3 border rounded-lg text-left text-sm
           ${
             disabled
-              ? "bg-gray-50 dark:bg-[#0f0f0f] border-gray-100 dark:border-[#1a1a1a] text-gray-400 dark:text-gray-600 cursor-not-allowed"
-              : "bg-gray-100 dark:bg-[#1a1a1a] border-gray-200 dark:border-[#2a2a2a] cursor-text"
+              ? "bg-gray-50 dark:bg-[#0f0f0f] border border-black/10 dark:border-white/20 text-gray-400 dark:text-white cursor-not-allowed"
+              : "bg-gray-100 dark:bg-[#1a1a1a] border border-black/10 dark:border-white/20 cursor-text"
           }
           ${
             disabled
               ? "text-gray-400 dark:text-gray-600"
-              : "text-gray-400 dark:text-gray-500"
+              : "text-gray-400 dark:text-white"
           }
           transition-all duration-200 min-h-[48px] flex items-center
           ${
