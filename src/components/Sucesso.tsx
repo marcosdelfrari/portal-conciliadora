@@ -51,8 +51,8 @@ export default function Sucesso({
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
             {titulo}
           </h1>
-          <p className="text-gray-600 dark:text-gray-300 mb-4">{subtitulo}</p>
-          <p className="text-gray-600 dark:text-gray-300 text-left">
+          <p className="text-gray-600 dark:text-zinc-300 mb-4">{subtitulo}</p>
+          <p className="text-gray-600 dark:text-zinc-300 text-left">
             {descricao}
           </p>
 

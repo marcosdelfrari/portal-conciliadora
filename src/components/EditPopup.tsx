@@ -118,7 +118,7 @@ export function EditPopup({
           <div className="flex gap-2 justify-end">
             <button
               onClick={onClose}
-              className="px-3 py-1 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+              className="px-3 py-1 text-sm text-gray-600 dark:text-[#999999] hover:text-gray-800 dark:hover:text-gray-200"
             >
               Cancelar
             </button>

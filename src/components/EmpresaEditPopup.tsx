@@ -87,7 +87,6 @@ export function EmpresaEditPopup({
 
         <div className="space-y-4">
           <div>
-         
             <Select
               label="Plano"
               value={plano}
@@ -98,7 +97,6 @@ export function EmpresaEditPopup({
           </div>
 
           <div>
-       
             <Select
               label="Tipo de Faturamento"
               value={tipoFaturamento}
@@ -111,13 +109,13 @@ export function EmpresaEditPopup({
           <div className="flex gap-3 justify-end pt-4">
             <button
               onClick={onClose}
-              className="px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 border border-black/10 dark:border-white/20 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+              className="w-full px-4 py-2 text-sm text-gray-600 dark:text-[#999999] hover:text-gray-800 dark:hover:text-gray-200 border border-black/10 dark:border-white/20 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
             >
               Cancelar
             </button>
             <button
               onClick={handleSave}
-              className="px-4 py-2 text-sm bg-[#c8d300] text-[#103239] dark:text-[#103239] cursor-pointer rounded-md hover:bg-[#c8d300]/90 transition-colors"
+              className="w-full px-4 py-2 text-sm bg-[#c8d300] text-[#103239] dark:text-[#103239] cursor-pointer rounded-md hover:bg-[#c8d300]/90 transition-colors"
             >
               Salvar
             </button>

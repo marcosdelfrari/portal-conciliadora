@@ -295,7 +295,7 @@ export default function PagamentosPage() {
             <div className="flex items-center gap-2">
               <button
                 onClick={handleVisibilityToggle}
-                className="flex items-center gap-2 px-3 py-2 rounded-md transition-colors bg-white dark:bg-[#1a1a1a] text-gray-700 dark:text-[#c8d300] hover:bg-gray-200 dark:hover:bg-gray-600"
+                className="flex items-center gap-2 px-3 py-2 rounded-md transition-colors bg-white dark:hover:bg-[#1a1a1a] dark:bg-[#0a0a0a]  text-gray-700 dark:text-[#c8d300] hover:bg-gray-200 border border-black/10 dark:border-white/20"
               >
                 {isVisible ? (
                   <>
@@ -400,7 +400,7 @@ export default function PagamentosPage() {
                   className={`flex items-center gap-2 px-4 py-2 rounded-md transition-colors ${
                     isEditing
                       ? "bg-[#c8d300] dark:bg-[#c8d300] text-white dark:text-[#103239]"
-                      : "bg-gray-100 dark:bg-[#0a0a0a] border border-black/10 dark:border-white/20 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600"
+                      : "bg-gray-100 dark:bg-[#0a0a0a] border border-black/10 dark:border-white/20 text-gray-700 dark:text-zinc-300 hover:bg-gray-200 dark:hover:bg-[#1a1a1a]"
                   }`}
                 >
                   {isEditing ? "Salvar" : "Editar"}
@@ -411,7 +411,7 @@ export default function PagamentosPage() {
         </div>
 
         <div className="hidden md:block bg-white dark:bg-[#0a0a0a] border border-black/10 dark:border-white/20 rounded-lg p-6 ">
-          <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center justify-between">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
               Planos e Faturamento
             </h2>
@@ -441,7 +441,7 @@ export default function PagamentosPage() {
                 placeholder="Procurar empresa..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 text-xs border border-black/10 dark:border-white/20 rounded-lg bg-gray-50 dark:bg-[#1a1a1a] text-gray-900 dark:text-white focus:ring-2 focus:ring-[#c8d300] focus:outline-none focus:border-transparent transition-all duration-200"
+                className="w-full pl-10 pr-4 py-3 text-xs border border-black/10 dark:border-white/20 rounded-lg bg-gray-50 dark:bg-[#0a0a0a] text-gray-900 dark:text-white focus:ring-1 focus:ring-[#c8d300] focus:outline-none focus:border-transparent transition-all duration-200"
               />
             </div>
           </div>
@@ -458,7 +458,7 @@ export default function PagamentosPage() {
                     <h3 className="font-medium text-sm text-gray-900 dark:text-white">
                       {empresa.nome}
                     </h3>
-                    <p className="text-xs text-gray-600 dark:text-gray-400">
+                    <p className="text-xs text-gray-600 dark:text-[#999999]">
                       CNPJ: {empresa.cnpj}
                     </p>
                   </div>
@@ -474,7 +474,7 @@ export default function PagamentosPage() {
                 </div>
               ))
             ) : (
-              <div className="text-center py-8 text-gray-500 dark:text-gray-400">
+              <div className="text-center py-8 text-gray-500 dark:text-[#999999]">
                 <Building2 className="w-12 h-12 mx-auto mb-4 opacity-50" />
                 <p>Nenhuma empresa encontrada</p>
                 <p className="text-sm">Tente ajustar os termos de busca</p>
@@ -484,7 +484,7 @@ export default function PagamentosPage() {
 
           {/* Contador de resultados */}
           {searchTerm && (
-            <div className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+            <div className="mt-4 text-sm text-gray-600 dark:text-[#999999]">
               {empresasFiltradas.length} empresa(s) encontrada(s)
             </div>
           )}

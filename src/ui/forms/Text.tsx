@@ -75,8 +75,8 @@ export const Text: React.FC<TextInputProps> = ({
       <label
         className={`font-light tracking-wide text-base ${
           disabled
-            ? "text-gray-400 dark:text-gray-600"
-            : "text-black dark:text-gray-200"
+            ? "text-gray-400 dark:text-[#999999]"
+            : "text-black dark:text-zinc-200"
         }`}
       >
         {label}
@@ -101,7 +101,7 @@ export const Text: React.FC<TextInputProps> = ({
           }
           ${
             disabled
-              ? "text-gray-400 dark:text-gray-600"
+              ? "text-gray-400 dark:text-[#999999]"
               : "text-gray-400 dark:text-white"
           }
           transition-all duration-200 min-h-[48px] flex items-center

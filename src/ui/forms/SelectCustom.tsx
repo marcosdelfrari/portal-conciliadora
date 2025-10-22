@@ -102,8 +102,8 @@ export const Select: React.FC<SelectProps> = ({
       <label
         className={`font-light tracking-wide text-base ${
           disabled
-            ? "text-gray-400 dark:text-gray-600"
-            : "text-black dark:text-gray-200"
+            ? "text-gray-400 dark:text-[#999999]"
+            : "text-black dark:text-zinc-200"
         }`}
       >
         {label}
@@ -120,13 +120,13 @@ export const Select: React.FC<SelectProps> = ({
           className={`w-full px-4 py-3 border rounded-lg text-left flex items-center justify-between text-sm
             ${
               disabled
-                ? "bg-gray-50 dark:bg-[#0f0f0f] border-gray-100 dark:border-[#1a1a1a] text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                ? "bg-gray-50 dark:bg-[#0f0f0f] border-gray-100 dark:border-[#1a1a1a] text-gray-400 dark:text-[#999999] cursor-not-allowed"
                 : "bg-gray-100 dark:bg-[#1a1a1a] border-gray-200 dark:border-[#2a2a2a] cursor-pointer"
             }
             ${
               disabled
-                ? "text-gray-400 dark:text-gray-600"
-                : "text-gray-400 dark:text-gray-500"
+                ? "text-gray-400 dark:text-white"
+                : "text-gray-400 dark:text-white"
             }
             focus:outline-none focus:ring-2 focus:ring-[#c8d300] focus:border-transparent transition-all duration-200`}
           aria-haspopup="listbox"
@@ -134,7 +134,7 @@ export const Select: React.FC<SelectProps> = ({
         >
           <span>{selectedOption ? selectedOption.label : placeholder}</span>
           <svg
-            className={`w-5 h-5 text-gray-400 dark:text-gray-500 transition-transform duration-200 ${
+            className={`w-5 h-5 text-gray-400 dark:text-[#999999] transition-transform duration-200 ${
               isOpen ? "rotate-180" : ""
             }`}
             fill="none"
@@ -163,7 +163,7 @@ export const Select: React.FC<SelectProps> = ({
                 className={`w-full px-4 py-3 text-left transition-colors duration-150 ${
                   option.value === value
                     ? "bg-gray-50 dark:bg-[#2a2a2a] text-[#c8d300]"
-                    : "text-gray-700 dark:text-gray-200"
+                    : "text-gray-700 dark:text-zinc-200"
                 } ${
                   index === focusedIndex ? "bg-gray-100 dark:bg-[#2a2a2a]" : ""
                 } hover:bg-gray-50 dark:hover:bg-[#2a2a2a]`}

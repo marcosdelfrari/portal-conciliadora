@@ -14,11 +14,11 @@ interface BreadcrumbProps {
 
 export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
   return (
-    <nav className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400 mb-6">
+    <nav className="flex items-center space-x-2 text-sm text-gray-600 dark:text-white font-extralight tracking-wider mb-6">
       {items.map((item, index) => (
         <React.Fragment key={index}>
           {index > 0 && (
-            <span className="text-gray-400 dark:text-gray-500">&gt;</span>
+            <span className="text-gray-400 dark:text-[#999999]">&gt;</span>
           )}
           {item.href ? (
             <Link
@@ -28,7 +28,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
               {item.label}
             </Link>
           ) : (
-            <span className="text-gray-900 dark:text-gray-100 font-medium">
+            <span className="text-gray-900 dark:text-zinc-100 font-medium">
               {item.label}
             </span>
           )}

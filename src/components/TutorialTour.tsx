@@ -228,7 +228,7 @@ export const TutorialTour = forwardRef<TutorialTourRef>((props, ref) => {
 
               <div className="flex items-start justify-between mb-2">
                 <div className="flex-1">
-                  <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">
+                  <div className="text-xs text-gray-500 dark:text-[#999999] mb-1">
                     {currentStep + 1}/{steps.length}
                   </div>
                   <h3 className="text-sm font-semibold text-gray-800 dark:text-[#c8d300]">
@@ -242,7 +242,7 @@ export const TutorialTour = forwardRef<TutorialTourRef>((props, ref) => {
                   <X className="w-6 h-6" />
                 </button>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-300">
+              <p className="text-sm text-gray-600 dark:text-zinc-300">
                 {steps[currentStep].description}
               </p>
             </div>

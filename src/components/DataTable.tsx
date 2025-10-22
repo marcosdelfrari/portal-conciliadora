@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { ChevronUp, ChevronDown, Edit2 } from "lucide-react";
+import { ChevronUp, ChevronDown, Edit2, Search } from "lucide-react";
 import { EditPopup } from "./EditPopup";
 
 export interface Column<T> {
@@ -123,9 +123,38 @@ export function DataTable<T>({
 
   return (
     <div
-      className={`bg-white dark:bg-[#0a0a0a] rounded-md shadow-lg border  border-black/10 dark:border-white/20 ${className}`}
+      className={`bg-white dark:bg-[#0a0a0a] rounded-md   ${className}`}
     >
-      <div className="overflow-x-auto">
+      {/* Filtros de Busca */}
+      {columns.some((col) => col.filterable) && (
+        <div className="pb-4 ">
+          <div className="flex justify-end">
+            {columns
+              .filter((col) => col.filterable)
+              .map((column) => (
+                <div key={String(column.key)} className="flex  flex-col">
+            <div className="relative">  
+              <Search className="absolute left-3 top-1/2 transform text-xs -translate-y-1/2 text-gray-400 w-4 h-4" />
+                  <input
+                    type="text"
+                    placeholder={`Buscar ${column.label.toLowerCase()}...`}
+                    value={filters[String(column.key)] || ""}
+                    onChange={(e) =>
+                      handleFilterChange(column.key, e.target.value)
+                    }
+                    className="pl-10 pr-4 py-3 border border-gray-300 dark:border-white/20 rounded-full
+                             bg-white dark:bg-[#0a0a0a] text-gray-900 dark:text-white
+                             focus:outline-none focus:ring-1 focus:ring-[#c8d300] focus:border-transparent
+                             placeholder-gray-400 dark:placeholder-[#cccccc] text-sm"
+                  />
+                </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
+
+      <div className="overflow-x-auto border rounded-md border-black/10 dark:border-white/20">
         <table className="w-full">
           <thead className="bg-gray-50 dark:bg-[#0a0a0a] rounded-xl">
             <tr>
@@ -133,7 +162,7 @@ export function DataTable<T>({
                 <th
                   key={String(column.key)}
                   className={`px-6 py-3 text-left text-base font-light text-gray-500 dark:text-[#c8d300] tracking-wider ${
-                    column.sortable || column.filterable
+                    column.sortable
                       ? "cursor-pointer hover:bg-gray-100 dark:hover:bg-[#1a1a1a]"
                       : ""
                   }`}
@@ -142,20 +171,6 @@ export function DataTable<T>({
                   <div className="flex items-center gap-2">
                     {column.label}
                     {column.sortable && getSortIcon(column.key)}
-                    {column.filterable && (
-                      <div className="flex w-full items-center gap-1">
-                        <input
-                          type="text"
-                          placeholder={`Procurar ${column.label.toLowerCase()}...`}
-                          value={filters[String(column.key)] || ""}
-                          onChange={(e) =>
-                            handleFilterChange(column.key, e.target.value)
-                          }
-                          className="w-full ml-4 px-2 py-2 text-xs border border-black/10 dark:border-white/20 rounded-full bg-white dark:bg-[#1a1a1a] focus:outline-none text-white font-light  dark:text-white placeholder-gray-400 focus:ring-1 focus:ring-[#c8d300] focus:border-transparent"
-                          onClick={(e) => e.stopPropagation()}
-                        />
-                      </div>
-                    )}
                   </div>
                 </th>
               ))}
@@ -202,14 +217,14 @@ export function DataTable<T>({
       </div>
 
       {filteredData.length === 0 && (
-        <div className="text-center py-8 text-gray-500 dark:text-gray-400">
+        <div className="text-center py-8 text-gray-500 dark:text-white ">
           <p>Nenhum resultado encontrado</p>
-          <p className="text-sm">Tente ajustar os filtros</p>
+          <p className="text-sm font-extralight tracking-wider">Tente ajustar os filtros</p>
         </div>
       )}
 
-      <div className="px-6 py-3 bg-gray-50 dark:bg-[#0a0a0a] border-t border-black/10 dark:border-white/20">
-        <p className="text-sm text-gray-600 dark:text-gray-400">
+      <div className="pl-7 py-3 ">
+        <p className="text-sm text-gray-600 dark:text-white font-extralight tracking-wider">
           {filteredData.length} de {data.length} registros
         </p>
       </div>

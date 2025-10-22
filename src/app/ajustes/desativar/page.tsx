@@ -128,7 +128,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#0a0a0a] flex flex-col p-4">
-   <Header />
+      <Header />
       <FloatButton />
 
       <div className="w-full px-4 max-w-md mx-auto">
@@ -176,7 +176,7 @@ export default function Page() {
               className={`font-medium py-3 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#c8d300] focus:ring-offset-2 dark:focus:ring-offset-gray-800 ${
                 isFormComplete()
                   ? "bg-[#103239] hover:bg-[#c8d300] dark:bg-[#c8d300] dark:hover:bg-[#c8d300] text-white dark:text-[#103239]"
-                  : "bg-gray-200 text-gray-400 cursor-not-allowed dark:bg-gray-700 dark:text-gray-500 opacity-50"
+                  : "bg-[#0a0a0a] border border-black/10 dark:border-white/20 text-gray-400 cursor-not-allowed dark:text-[#999999] opacity-50"
               }`}
             >
               Salvar alterações

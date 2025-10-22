@@ -203,8 +203,8 @@ export const NumericInput: React.FC<NumericInputProps> = ({
       <label
         className={`font-light tracking-wide text-base ${
           disabled
-            ? "text-gray-400 dark:text-gray-600"
-            : "text-black dark:text-gray-200"
+            ? "text-gray-400 dark:text-[#999999]"
+            : "text-black dark:text-zinc-200"
         }`}
       >
         {label}
@@ -228,13 +228,13 @@ export const NumericInput: React.FC<NumericInputProps> = ({
             w-full px-4 py-3 border rounded-lg text-left text-sm
             ${
               disabled
-                ? "bg-gray-50 dark:bg-[#0f0f0f] border-gray-100 dark:border-[#1a1a1a] text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                ? "bg-gray-50 dark:bg-[#0f0f0f] border-gray-100 dark:border-[#1a1a1a] text-gray-400 dark:text-[#999999] cursor-not-allowed"
                 : "bg-gray-100 dark:bg-[#1a1a1a] border-gray-200 dark:border-[#2a2a2a] cursor-text"
             }
             ${
               disabled
-                ? "text-gray-400 dark:text-gray-600"
-                : "text-gray-400 dark:text-gray-500"
+                ? "text-gray-400 dark:text-[#999999]"
+                : "text-gray-400 dark:text-[#999999]"
             }
             transition-all duration-200 min-h-[48px] flex items-center
             ${
@@ -250,7 +250,7 @@ export const NumericInput: React.FC<NumericInputProps> = ({
 
         {showPlaceholder && (
           <div className="absolute inset-0 px-4 py-3 flex items-center pointer-events-none">
-            <span className="text-gray-400 dark:text-gray-500 text-sm">
+            <span className="text-gray-400 dark:text-[#999999] text-sm">
               {effectivePlaceholder}
             </span>
           </div>
